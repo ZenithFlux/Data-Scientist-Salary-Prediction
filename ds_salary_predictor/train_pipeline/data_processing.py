@@ -13,8 +13,7 @@ def process_csv(csv_path: 'str | PathLike'):
     "Reads CSV in format of original dataset, and returns arrays of features and targets."
     
     df = pd.read_csv(csv_path)
-    df = df[["Rating", "hourly", "employer_provided",
-             "same_state", "python_yn", "R_yn", "spark", "aws", "excel", "avg_salary"]]
+    df = df[["Rating", "hourly","same_state", "python_yn", "R_yn", "spark", "aws", "excel", "avg_salary"]]
     df.apply(lambda x: np.float32(x))
     
     neg_rows = set()
