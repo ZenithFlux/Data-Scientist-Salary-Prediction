@@ -2,7 +2,6 @@ from typing import TYPE_CHECKING
 
 from sklearn.linear_model import LinearRegression
 from sklearn.svm import SVR
-from sklearn.multioutput import MultiOutputRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.neural_network import MLPRegressor
 from xgboost import XGBRegressor
@@ -17,10 +16,10 @@ if TYPE_CHECKING:
 
 models = {"LR": {"model": LinearRegression(),
                  "params": {}},
-         "SVR": {"model": MultiOutputRegressor(SVR()),
+         "SVR": {"model": SVR(),
                  "params": {
-                     "estimator__C": [0.01, 0.1, 1],
-                     "estimator__gamma": ["scale", "auto"]
+                     "C": [0.01, 0.1, 1],
+                     "gamma": ["scale", "auto"]
                  }},
          "Random Forest": {
              "model": RandomForestRegressor(random_state=350),
