@@ -24,17 +24,17 @@ models = {"LR": {"model": LinearRegression(),
          "Random Forest": {
              "model": RandomForestRegressor(random_state=350),
              "params":{
-                 "n_estimators": [10, 50, 100, 500]
+                 "n_estimators": [50, 100, 500, 1000]
              }},
          "MLP": {
-             "model": MLPRegressor(random_state=651),
+             "model": MLPRegressor(max_iter=10000, random_state=651),
              "params": {
                  "hidden_layer_sizes": [
                      [100],
                      [100, 10],
                      [1000, 100, 10]
                  ],
-                 "learning_rate_init": [0.0001, 0.001, 0.01, 0.1],
+                 "learning_rate_init": [0.001, 0.1, 1],
                  "early_stopping": [True, False]
              }
          },
