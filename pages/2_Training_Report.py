@@ -7,8 +7,9 @@ from ds_salary_predictor.config import Config
 def get_report():
     return pd.read_csv(Config.report_path)
 
-st.title("Report of the best models trained on the same data")
+st.title("Model Training Report")
+st.markdown("All the models are trained on the same dataset")
 
-st.dataframe(get_report(), hide_index=True)
-
-st.markdown("### Best Model: ***Random Forest***")
+report = get_report()
+st.dataframe(report, hide_index=True)
+st.markdown(f"### The Best Model for prediction is *{report['Model'].iloc[report['RMSE'].argmin()]}*.") 
