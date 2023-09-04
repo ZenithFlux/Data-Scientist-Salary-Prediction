@@ -11,6 +11,8 @@ if TYPE_CHECKING:
     from os import PathLike
 
 def trainpipe(data_csv_path: 'str | PathLike', model_savepath: 'str | PathLike'=Config.model_path):
+    "End to End training pipeline."
+    
     X, Y = process_csv(data_csv_path)
     model, report_df = search_and_train(X, Y)
     

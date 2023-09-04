@@ -17,5 +17,7 @@ drift_report = Report([DataDriftPreset()])
 drift_report.run(reference_data=clean_df(pd.read_csv(DATASET_PATH)),
                  current_data=clean_df(pd.read_csv(DATASET_PATH)),
                  column_mapping=cm)
+# current and reference data should be different,
+# but since we have only one dataset, they are the same.
 
 st_html(drift_report.get_html(), width=1000, height=1200, scrolling=True)

@@ -14,6 +14,7 @@ if TYPE_CHECKING:
     from numpy import ndarray
 
 
+# These models will be trained and tested for performance
 models = {"LR": {"model": LinearRegression(),
                  "params": {}},
          "SVR": {"model": SVR(),
@@ -46,7 +47,7 @@ models = {"LR": {"model": LinearRegression(),
 
         
 def search_and_train(X: 'ndarray', Y: 'ndarray'):
-    "Returns best model trained and a dataframe of model performance report"
+    "Returns best trained model and a dataframe of model performance report"
     
     best_score = None
     best_model = None

@@ -22,6 +22,8 @@ def process_csv(csv_path: 'str | PathLike'):
 
 
 def clean_df(df: 'DataFrame'):
+    "Clean the original dataframe"
+    
     df = df[["Rating", "hourly","same_state", "python_yn", "R_yn", "spark", "aws", "excel", "avg_salary"]]
     df.apply(lambda x: np.float32(x))
     
