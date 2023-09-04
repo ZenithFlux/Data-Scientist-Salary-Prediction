@@ -12,7 +12,7 @@ def get_requirements():
 
 setup(name="ds_salary_prediction",
       version="0.0.1",
-      description="Predict the salaries of a data science professionals",
+      description="Predict the salaries of data science professionals",
       author="Chaitanya Lakhchaura",
       license="MIT",
       packages= find_packages(),
